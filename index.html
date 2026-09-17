@@ -289,11 +289,11 @@
     }
 
     .scripture-lead {
-      font-size: clamp(1.5rem, 5vw, 2.4rem);
+      font-size: clamp(1.25rem, 3.8vw, 1.8rem);
       font-style: italic;
       color: #fffaf0;
       font-weight: 300;
-      line-height: 1.4;
+      line-height: 1.5;
       letter-spacing: 0.5px;
       max-width: 820px;
       margin: 0 auto;
@@ -620,7 +620,7 @@
       filter: brightness(1.15);
     }
 
-    /* 6. RESPONSIVE PHOTO GALLERY */
+    /* GALLERY */
     .gallery-pavilion {
       margin: 5.5rem 0 4.5rem;
       text-align: center;
@@ -841,8 +841,14 @@
         <span>A & D</span>
       </div>
 
-      <div class="scripture-lead">“Marriage is honourable in all”</div>
-      <div class="scripture-tag">— Hebrews 13:4</div>
+      <div class="scripture-lead">
+        “Many, O Lord my God, are the wonders You have done,<br>
+        The things You planned for us.<br>
+        No one can recount to you!<br>
+        Were I to speak and tell of them,<br>
+        They would be too many to declare.”
+      </div>
+      <div class="scripture-tag">— Psalms 40:5</div>
 
       <div class="gold-divider-rule">
         <div class="line"></div>
@@ -870,7 +876,7 @@
       <div>
         <h2 class="name-marquee">Divya Vani</h2>
         <div class="parental-tribute">
-          (D/o. Mrs. Jaya Swaroopa Rani & Mr. Kadali Venkata Mohan Rao)
+          (D/o. Mrs. Jaya Swaroopa Rani &<br>Mr. Kadali Venkata Mohan Rao)
         </div>
       </div>
     </section>
@@ -939,11 +945,10 @@
             <div class="event-clock">Thursday, 8th October 2026</div>
             <div class="event-address">
               <strong>Raj Mahal Function Hall</strong><br>
-              Shamshabad, Hyderabad<br>
-              <em style="color: var(--gold-bright); font-style: italic;">Followed by Dinner</em>
+              Shamshabad, Hyderabad
             </div>
           </div>
-          <a href="https://www.google.com/maps/search/?api=1&query=Raj+Mahal+Function+Hall+Shamshabad+Hyderabad" class="btn-venue" target="_blank">
+          <a href="https://maps.google.com/?q=Raj+Mahal+Function+Hall+Shamshabad+Hyderabad" class="btn-venue" target="_blank">
             View Map ➔
           </a>
         </div>
@@ -956,33 +961,13 @@
 
       <div class="gallery-three-stack">
         <div class="gallery-card">
-          <img 
-            src="./photo3.jpeg" 
-            alt="Anurag & Divya" 
-            class="gallery-img"
-            loading="eager"
-            onerror="tryNextImg(this, ['./photo3.jpg', './photo3.png', './photo3.JPEG', 'photo3.jpeg', 'photo3.jpg'])"
-          >
+          <img src="./photo3.jpeg" alt="Anurag & Divya" class="gallery-img" loading="eager" onerror="tryNextImg(this, ['./photo3.jpg', './photo3.png', 'photo3.jpeg'])">
         </div>
-
         <div class="gallery-card">
-          <img 
-            src="./photo2.jpeg" 
-            alt="Anurag & Divya" 
-            class="gallery-img"
-            loading="eager"
-            onerror="tryNextImg(this, ['./photo2.jpg', './photo2.png', './photo2.JPEG', 'photo2.jpeg', 'photo2.jpg'])"
-          >
+          <img src="./photo2.jpeg" alt="Anurag & Divya" class="gallery-img" loading="eager" onerror="tryNextImg(this, ['./photo2.jpg', './photo2.png', 'photo2.jpeg'])">
         </div>
-
         <div class="gallery-card">
-          <img 
-            src="./photo1.jpeg" 
-            alt="Wedding Rings" 
-            class="gallery-img"
-            loading="eager"
-            onerror="tryNextImg(this, ['./photo1.jpg', './photo1.png', './photo1.JPEG', 'photo1.jpeg', 'photo1.jpg'])"
-          >
+          <img src="./photo1.jpeg" alt="Wedding Rings" class="gallery-img" loading="eager" onerror="tryNextImg(this, ['./photo1.jpg', './photo1.png', 'photo1.jpeg'])">
         </div>
       </div>
 
@@ -1040,7 +1025,6 @@
     function startSyntheticMusic() {
       initAudioContext();
       if (!audioCtx) return;
-
       isSynthRunning = true;
       updateAudioButton(true);
 
@@ -1061,7 +1045,6 @@
         const bassGain = audioCtx.createGain();
         bassOsc.type = 'triangle';
         bassOsc.frequency.setValueAtTime(chord[0], now);
-
         bassGain.gain.setValueAtTime(0.0001, now);
         bassGain.gain.linearRampToValueAtTime(0.12, now + 0.3);
         bassGain.gain.exponentialRampToValueAtTime(0.0001, now + 2.8);
@@ -1075,21 +1058,16 @@
           const noteTime = now + (idx * 0.28);
           const osc = audioCtx.createOscillator();
           const gain = audioCtx.createGain();
-
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, noteTime);
-
           gain.gain.setValueAtTime(0.0001, noteTime);
           gain.gain.exponentialRampToValueAtTime(0.07, noteTime + 0.05);
           gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 2.3);
-
           osc.connect(gain);
           gain.connect(audioCtx.destination);
-
           osc.start(noteTime);
           osc.stop(noteTime + 2.4);
         });
-
         step++;
       }
 
@@ -1107,7 +1085,6 @@
     function playAudioMaster() {
       initAudioContext();
       startSyntheticMusic();
-
       if (streamAudio) {
         streamAudio.volume = 0.9;
         streamAudio.play().then(() => {
@@ -1149,12 +1126,7 @@
       height = canvas.height = window.innerHeight;
     });
 
-    const petalTones = [
-      'rgba(240, 180, 190, 0.45)',
-      'rgba(230, 160, 175, 0.38)',
-      'rgba(248, 210, 218, 0.32)',
-      'rgba(216, 178, 87, 0.25)'
-    ];
+    const petalTones = ['rgba(240, 180, 190, 0.45)', 'rgba(230, 160, 175, 0.38)', 'rgba(248, 210, 218, 0.32)', 'rgba(216, 178, 87, 0.25)'];
 
     class PetalParticle {
       constructor() {
