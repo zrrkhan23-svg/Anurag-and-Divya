@@ -289,15 +289,16 @@
     }
 
     .scripture-lead {
-      font-size: clamp(1.2rem, 3.8vw, 1.7rem);
+      font-size: clamp(1.15rem, 3.5vw, 1.5rem);
       font-style: italic;
       color: #fffaf0;
       font-weight: 300;
       line-height: 1.5;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       max-width: 820px;
       margin: 0 auto;
       text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      white-space: pre-line;
     }
 
     .scripture-tag {
@@ -549,11 +550,11 @@
     }
 
     .lounge-wedding { border: 1.5px solid var(--gold-24k); }
-    .lounge-wedding .event-badge { background: rgba(216, 178, 87, 0.2); color: var(--gold-bright); border: 1.5px solid var(--gold-24k); }
+    .lounge-wedding .event-badge { background: rgba(216, 178, 87, 0.2); color: var(--gold-bright); border: 1px solid var(--gold-24k); }
     .lounge-wedding .event-name { color: #ffffff; }
 
     .lounge-reception { border: 1.5px solid var(--gold-24k); }
-    .lounge-reception .event-badge { background: rgba(216, 178, 87, 0.2); color: var(--gold-bright); border: 1.5px solid var(--gold-24k); }
+    .lounge-reception .event-badge { background: rgba(216, 178, 87, 0.2); color: var(--gold-bright); border: 1px solid var(--gold-24k); }
     .lounge-reception .event-name { color: #ffd97d; }
 
     .event-info { width: 100%; }
@@ -620,7 +621,7 @@
       filter: brightness(1.15);
     }
 
-    /* GALLERY */
+    /* 6. RESPONSIVE PHOTO GALLERY */
     .gallery-pavilion {
       margin: 5.5rem 0 4.5rem;
       text-align: center;
@@ -730,15 +731,15 @@
 
     .signatory-hierarchy {
       font-family: 'Cinzel Decorative', serif;
-      font-size: clamp(1.15rem, 4vw, 1.45rem);
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
       color: #ffffff;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       line-height: 1.6;
       text-shadow: 0 2px 10px rgba(0,0,0,0.6);
     }
 
-    /* FLOATING AUDIO TOGGLE BUTTON */
+    /* FLOATING MUSIC TOGGLE BUTTON */
     .floating-audio-widget {
       position: fixed;
       bottom: 24px;
@@ -824,7 +825,7 @@
     </div>
   </div>
 
-  <!-- Audio Element -->
+  <!-- Audio Element with explicit relative path -->
   <audio id="external-audio" loop preload="auto" playsinline>
     <source src="./music.mp3" type="audio/mpeg">
     <source src="music.mp3" type="audio/mpeg">
@@ -843,13 +844,11 @@
         <span>A & D</span>
       </div>
 
-      <div class="scripture-lead">
-        “Many, O Lord my God, are the wonders You have done,<br>
-        The things You planned for us.<br>
-        No one can recount to you!<br>
-        Were I to speak and tell of them,<br>
-        They would be too many to declare.”
-      </div>
+      <div class="scripture-lead">“Many O Lord My God Are the wonders You have done,
+The things You Planned For Us.
+No One Can Recount to them!
+Were I to Speak And Tell Of them,
+They Would be too many to Declare.”</div>
       <div class="scripture-tag">— Psalms 40:5</div>
 
       <div class="gold-divider-rule">
@@ -913,7 +912,7 @@
         </div>
       </div>
 
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Anurag+Nischal+%26+Divya+Vani&dates=20261005T043000Z/20261005T083000Z&details=Holy+Matrimony.&location=Hebron+Prayer+House,+Narsingapur+Road,+Jagtial" target="_blank" class="btn-calendar-link">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Anurag+Nischal+%26+Divya+Vani&dates=20261005T043000Z/20261005T083000Z&details=Holy+Matrimony+followed+by+Reception+and+Lunch.&location=Hebron+Prayer+House,+Narsingapur+Road,+Jagtial" target="_blank" class="btn-calendar-link">
         📅 Add to Google Calendar
       </a>
     </section>
@@ -932,7 +931,8 @@
             <div class="event-clock">Monday, 5th October 2026 • 10:00 AM</div>
             <div class="event-address">
               <strong>Hebron Prayer House</strong><br>
-              Narsingapur Road, Jagtial
+              Narsingapur Road, Jagtial<br>
+              <em style="color: var(--gold-bright); font-style: italic;">Followed by reception & Lunch From 12:00 noon onwards At Virupakshi gardens Karimnagar Road Jagtial</em>
             </div>
           </div>
           <a href="https://www.google.com/maps/search/?api=1&query=Hebron+Prayer+House+Narsingapur+Road+Jagtial" class="btn-venue" target="_blank">
@@ -943,7 +943,7 @@
         <div class="event-lounge-card lounge-reception scene-reveal">
           <div class="event-info">
             <span class="event-badge">Grand Banquet</span>
-            <h4 class="event-name">Reception & Dinner</h4>
+            <h4 class="event-name">Reception</h4>
             <div class="event-clock">Thursday, 8th October 2026</div>
             <div class="event-address">
               <strong>Raj Mahal Function Hall</strong><br>
@@ -951,14 +951,14 @@
               <em style="color: var(--gold-bright); font-style: italic;">Followed by Dinner</em>
             </div>
           </div>
-          <a href="https://www.google.com/maps/search/?api=1&query=Raj+Mahal+Function+Hall+Shamshabad+Hyderabad" class="btn-venue" target="_blank">
+          <a href="https://maps.google.com/?q=Raj+Mahal+Function+Hall+Shamshabad+Hyderabad" class="btn-venue" target="_blank">
             View Map ➔
           </a>
         </div>
       </div>
     </section>
 
-    <!-- PHOTO GALLERY -->
+    <!-- 3-PHOTO EDITORIAL GALLERY -->
     <section class="gallery-pavilion scene-reveal">
       <div style="font-family:'Pinyon Script', cursive; font-size: clamp(2.4rem, 7.5vw, 2.8rem); color: var(--gold-bright);">Moments of Grace</div>
       <h3 style="font-family:'Cinzel Decorative', serif; font-size: clamp(1.4rem, 4.5vw, 1.85rem); color: #ffffff; letter-spacing: 1.5px;">The Couple</h3>
@@ -1011,7 +1011,7 @@
       <div class="benediction-prefix">With Love</div>
       <div class="signatory-hierarchy">
         Mrs. T. Romila & Mr. Tadepalli Vijaya Kumar<br>
-        & Family
+        Mrs. Jaya Swaroopa Rani & Mr. Kadali Venkata Mohan Rao
       </div>
     </footer>
 
@@ -1151,7 +1151,6 @@
     window.addEventListener('touchstart', initAudioContext, { once: true });
     window.addEventListener('click', initAudioContext, { once: true });
 
-    // Atmosphere Canvas
     const canvas = document.getElementById('atmosphere-canvas');
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
