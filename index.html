@@ -289,15 +289,16 @@
     }
 
     .scripture-lead {
-      font-size: clamp(1.2rem, 3.8vw, 1.7rem);
+      font-size: clamp(1.25rem, 4vw, 1.9rem);
       font-style: italic;
       color: #fffaf0;
       font-weight: 300;
       line-height: 1.5;
       letter-spacing: 0.5px;
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
       text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      white-space: pre-line;
     }
 
     .scripture-tag {
@@ -307,7 +308,7 @@
       text-transform: uppercase;
       color: var(--gold-bright);
       font-weight: 600;
-      margin-top: 0.8rem;
+      margin-top: 1rem;
       margin-bottom: 1.8rem;
     }
 
@@ -824,7 +825,7 @@
     </div>
   </div>
 
-  <!-- Audio Element -->
+  <!-- Audio Element with explicit relative path -->
   <audio id="external-audio" loop preload="auto" playsinline>
     <source src="./music.mp3" type="audio/mpeg">
     <source src="music.mp3" type="audio/mpeg">
@@ -843,13 +844,11 @@
         <span>A & D</span>
       </div>
 
-      <div class="scripture-lead">
-        “Many, O Lord my God, are the wonders You have done,<br>
-        the things You planned for us.<br>
-        No one can recount to you!<br>
-        Were I to speak and tell of them,<br>
-        they would be too many to declare.”
-      </div>
+      <div class="scripture-lead">“Many O Lord My God Are the wonders You have done,
+The things You Planned For Us.
+No One Can Recount to You!
+Were I to Speak And Tell Of them,
+They Would be too many to Declare.”</div>
       <div class="scripture-tag">— Psalms 40:5</div>
 
       <div class="gold-divider-rule">
@@ -869,7 +868,7 @@
       <div>
         <h2 class="name-marquee">Anurag Nischal</h2>
         <div class="parental-tribute">
-          (S/o. Mrs. T. Romila & Mr. Tadepalli Vijaya Kumar)
+          (S/o. Mrs. T. Romila<br>& Mr. Tadepalli Vijaya Kumar)
         </div>
       </div>
 
@@ -878,8 +877,7 @@
       <div>
         <h2 class="name-marquee">Divya Vani</h2>
         <div class="parental-tribute">
-          (D/o. Mrs. Jaya Swaroopa Rani<br>
-          & Mr. Kadali Venkata Mohan Rao)
+          (D/o. Mrs. Jaya Swaroopa Rani<br>& Mr. Kadali Venkata Mohan Rao)
         </div>
       </div>
     </section>
@@ -945,7 +943,7 @@
           <div class="event-info">
             <span class="event-badge">Grand Banquet</span>
             <h4 class="event-name">Reception & Dinner</h4>
-            <div class="event-clock">Thursday, 8th October 2026 • Evening</div>
+            <div class="event-clock">Thursday, 8th October 2026</div>
             <div class="event-address">
               <strong>Raj Mahal Function Hall</strong><br>
               Shamshabad, Hyderabad<br>
@@ -965,6 +963,7 @@
       <h3 style="font-family:'Cinzel Decorative', serif; font-size: clamp(1.4rem, 4.5vw, 1.85rem); color: #ffffff; letter-spacing: 1.5px;">The Couple</h3>
 
       <div class="gallery-three-stack">
+        <!-- 1. Staircase Picture -->
         <div class="gallery-card">
           <img 
             src="./photo3.jpeg" 
@@ -975,6 +974,7 @@
           >
         </div>
 
+        <!-- 2. Forehead Kiss Picture -->
         <div class="gallery-card">
           <img 
             src="./photo2.jpeg" 
@@ -985,6 +985,7 @@
           >
         </div>
 
+        <!-- 3. Wedding Rings Picture -->
         <div class="gallery-card">
           <img 
             src="./photo1.jpeg" 
@@ -1117,6 +1118,7 @@
     function playAudioMaster() {
       initAudioContext();
       startSyntheticMusic();
+
       if (streamAudio) {
         streamAudio.volume = 0.9;
         streamAudio.play().then(() => {
@@ -1148,7 +1150,6 @@
     window.addEventListener('touchstart', initAudioContext, { once: true });
     window.addEventListener('click', initAudioContext, { once: true });
 
-    // Atmosphere Petals
     const canvas = document.getElementById('atmosphere-canvas');
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
