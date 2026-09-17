@@ -289,7 +289,7 @@
     }
 
     .scripture-lead {
-      font-size: clamp(1.25rem, 3.8vw, 1.8rem);
+      font-size: clamp(1.2rem, 3.8vw, 1.7rem);
       font-style: italic;
       color: #fffaf0;
       font-weight: 300;
@@ -620,7 +620,7 @@
       filter: brightness(1.15);
     }
 
-    /* GALLERY */
+    /* 6. RESPONSIVE PHOTO GALLERY */
     .gallery-pavilion {
       margin: 5.5rem 0 4.5rem;
       text-align: center;
@@ -824,11 +824,13 @@
     </div>
   </div>
 
+  <!-- Audio Element -->
   <audio id="external-audio" loop preload="auto" playsinline>
     <source src="./music.mp3" type="audio/mpeg">
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- Floating Audio Widget -->
   <div class="floating-audio-widget" onclick="toggleAudioSystem()">
     <span class="audio-icon-glyph" id="audio-glyph">♪</span>
     <span class="audio-text-label" id="audio-label">Play Music</span>
@@ -843,10 +845,10 @@
 
       <div class="scripture-lead">
         “Many, O Lord my God, are the wonders You have done,<br>
-        The things You planned for us.<br>
+        the things You planned for us.<br>
         No one can recount to you!<br>
         Were I to speak and tell of them,<br>
-        They would be too many to declare.”
+        they would be too many to declare.”
       </div>
       <div class="scripture-tag">— Psalms 40:5</div>
 
@@ -867,7 +869,7 @@
       <div>
         <h2 class="name-marquee">Anurag Nischal</h2>
         <div class="parental-tribute">
-          (S/o. Mrs. T. Romila & Mr. T. Vijaya Kumar)
+          (S/o. Mrs. T. Romila & Mr. Tadepalli Vijaya Kumar)
         </div>
       </div>
 
@@ -876,7 +878,8 @@
       <div>
         <h2 class="name-marquee">Divya Vani</h2>
         <div class="parental-tribute">
-          (D/o. Mrs. Jaya Swaroopa Rani &<br>Mr. Kadali Venkata Mohan Rao)
+          (D/o. Mrs. Jaya Swaroopa Rani<br>
+          & Mr. Kadali Venkata Mohan Rao)
         </div>
       </div>
     </section>
@@ -942,10 +945,11 @@
           <div class="event-info">
             <span class="event-badge">Grand Banquet</span>
             <h4 class="event-name">Reception & Dinner</h4>
-            <div class="event-clock">Thursday, 8th October 2026</div>
+            <div class="event-clock">Thursday, 8th October 2026 • Evening</div>
             <div class="event-address">
               <strong>Raj Mahal Function Hall</strong><br>
-              Shamshabad, Hyderabad
+              Shamshabad, Hyderabad<br>
+              <em style="color: var(--gold-bright); font-style: italic;">Followed by Dinner</em>
             </div>
           </div>
           <a href="https://maps.google.com/?q=Raj+Mahal+Function+Hall+Shamshabad+Hyderabad" class="btn-venue" target="_blank">
@@ -955,19 +959,40 @@
       </div>
     </section>
 
+    <!-- 3-PHOTO EDITORIAL GALLERY -->
     <section class="gallery-pavilion scene-reveal">
       <div style="font-family:'Pinyon Script', cursive; font-size: clamp(2.4rem, 7.5vw, 2.8rem); color: var(--gold-bright);">Moments of Grace</div>
       <h3 style="font-family:'Cinzel Decorative', serif; font-size: clamp(1.4rem, 4.5vw, 1.85rem); color: #ffffff; letter-spacing: 1.5px;">The Couple</h3>
 
       <div class="gallery-three-stack">
         <div class="gallery-card">
-          <img src="./photo3.jpeg" alt="Anurag & Divya" class="gallery-img" loading="eager" onerror="tryNextImg(this, ['./photo3.jpg', './photo3.png', 'photo3.jpeg'])">
+          <img 
+            src="./photo3.jpeg" 
+            alt="Anurag & Divya" 
+            class="gallery-img"
+            loading="eager"
+            onerror="tryNextImg(this, ['./photo3.jpg', './photo3.png', './photo3.JPEG', 'photo3.jpeg', 'photo3.jpg'])"
+          >
         </div>
+
         <div class="gallery-card">
-          <img src="./photo2.jpeg" alt="Anurag & Divya" class="gallery-img" loading="eager" onerror="tryNextImg(this, ['./photo2.jpg', './photo2.png', 'photo2.jpeg'])">
+          <img 
+            src="./photo2.jpeg" 
+            alt="Anurag & Divya" 
+            class="gallery-img"
+            loading="eager"
+            onerror="tryNextImg(this, ['./photo2.jpg', './photo2.png', './photo2.JPEG', 'photo2.jpeg', 'photo2.jpg'])"
+          >
         </div>
+
         <div class="gallery-card">
-          <img src="./photo1.jpeg" alt="Wedding Rings" class="gallery-img" loading="eager" onerror="tryNextImg(this, ['./photo1.jpg', './photo1.png', 'photo1.jpeg'])">
+          <img 
+            src="./photo1.jpeg" 
+            alt="Wedding Rings" 
+            class="gallery-img"
+            loading="eager"
+            onerror="tryNextImg(this, ['./photo1.jpg', './photo1.png', './photo1.JPEG', 'photo1.jpeg', 'photo1.jpg'])"
+          >
         </div>
       </div>
 
@@ -985,7 +1010,7 @@
     <footer class="benediction-court scene-reveal">
       <div class="benediction-quote">“We appreciate your prayers & presence”</div>
       <div class="benediction-prefix">With Love</div>
-      <div class="signatory-hierarchy">Mrs. T. Romila & Mr. T. Vijaya Kumar & Family</div>
+      <div class="signatory-hierarchy">Mrs. T. Romila & Mr. Tadepalli Vijaya Kumar & Family</div>
     </footer>
 
   </main>
@@ -1025,6 +1050,7 @@
     function startSyntheticMusic() {
       initAudioContext();
       if (!audioCtx) return;
+
       isSynthRunning = true;
       updateAudioButton(true);
 
@@ -1045,6 +1071,7 @@
         const bassGain = audioCtx.createGain();
         bassOsc.type = 'triangle';
         bassOsc.frequency.setValueAtTime(chord[0], now);
+
         bassGain.gain.setValueAtTime(0.0001, now);
         bassGain.gain.linearRampToValueAtTime(0.12, now + 0.3);
         bassGain.gain.exponentialRampToValueAtTime(0.0001, now + 2.8);
@@ -1058,16 +1085,21 @@
           const noteTime = now + (idx * 0.28);
           const osc = audioCtx.createOscillator();
           const gain = audioCtx.createGain();
+
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, noteTime);
+
           gain.gain.setValueAtTime(0.0001, noteTime);
           gain.gain.exponentialRampToValueAtTime(0.07, noteTime + 0.05);
           gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 2.3);
+
           osc.connect(gain);
           gain.connect(audioCtx.destination);
+
           osc.start(noteTime);
           osc.stop(noteTime + 2.4);
         });
+
         step++;
       }
 
@@ -1116,6 +1148,7 @@
     window.addEventListener('touchstart', initAudioContext, { once: true });
     window.addEventListener('click', initAudioContext, { once: true });
 
+    // Atmosphere Petals
     const canvas = document.getElementById('atmosphere-canvas');
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
@@ -1126,7 +1159,12 @@
       height = canvas.height = window.innerHeight;
     });
 
-    const petalTones = ['rgba(240, 180, 190, 0.45)', 'rgba(230, 160, 175, 0.38)', 'rgba(248, 210, 218, 0.32)', 'rgba(216, 178, 87, 0.25)'];
+    const petalTones = [
+      'rgba(240, 180, 190, 0.45)',
+      'rgba(230, 160, 175, 0.38)',
+      'rgba(248, 210, 218, 0.32)',
+      'rgba(216, 178, 87, 0.25)'
+    ];
 
     class PetalParticle {
       constructor() {
